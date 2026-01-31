@@ -1,0 +1,33 @@
+trigger:
+  - main
+
+pool:
+  vmImage: "ubuntu-latest"
+
+variables:
+  terraformVersion: "1.5.7"
+
+stages:
+  - stage: Validate
+    displayName: "Validate Starforge"
+    jobs:
+      - job: TerraformValidate
+        steps:
+          - task: Bash@3
+            displayName: "Install Terraform"
+            inputs:
+              targetType: "inline"
+              script: |
+                set -euo pipefail
+                curl -fsSL https://releases.hashicorp.com/terraform/${terraformVersion}/terraform_${terraformVersion}_linux_amd64.zip -o terraform.zip
+                unzip terraform.zip
+                sudo mv terraform /usr/local/bin/terraform
+
+          - script: |
+              terraform -version
+            displayName: "Terraform Version"
+
+          - script: |
+              cd terraform
+              terraform fmt -check -recursive
+            displayName: "Terraform Format Check"
