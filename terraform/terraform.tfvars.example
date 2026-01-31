@@ -1,0 +1,11 @@
+location        = "eastus"
+environment     = "dev"
+resource_prefix = "nebula"
+stardate_tag    = "2024-01"
+log_analytics_sku     = "PerGB2018"
+log_retention_in_days = 30
+storage_replication_type = "LRS"
+automation_sku        = "Basic"
+extra_tags = {
+  owner = "mission-control"
+}
