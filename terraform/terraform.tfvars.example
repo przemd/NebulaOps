@@ -1,0 +1,7 @@
+location        = "eastus"
+environment     = "dev"
+resource_prefix = "nebula"
+stardate_tag    = "2024-01"
+extra_tags = {
+  owner = "mission-control"
+}
