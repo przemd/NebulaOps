@@ -10,6 +10,8 @@
 2. Update `terraform/backend.tf` with your resource group, storage account, and container.
 3. Re-run `terraform init` to migrate state.
 
+See `docs/STATE_BOOTSTRAP.md` for the scripted bootstrap flow.
+
 ## Runbook operations
 - Import `automation/runbooks/stellar-drift.ps1` into Azure Automation.
 - Schedule it daily or tie it to pipeline events.

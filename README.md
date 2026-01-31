@@ -35,6 +35,11 @@ Generate a plan with:
 ./scripts/nebula-plan.sh
 ```
 
+Bootstrap remote state storage with:
+```bash
+./scripts/bootstrap-state.sh
+```
+
 ## Terraform state (recommended)
 `terraform/backend.tf` is a template for remote state. Replace the values with your storage account once created, then re-run:
 ```bash
@@ -57,7 +62,7 @@ Your landing zone will create a **NebulaOps** resource group with star-themed ta
 └── terraform/            # Infrastructure as code
 ```
 
-See `docs/OPERATIONS.md` for the day-2 operations checklist.
+See `docs/OPERATIONS.md` and `docs/STATE_BOOTSTRAP.md` for day-2 operations and state setup guidance.
 
 ## Next orbit ideas
 - Add GitHub Actions or Azure DevOps pipelines for linting and policy checks.
